@@ -2,7 +2,6 @@
 # coding: utf-8
 
 # # ETL Pipeline Preparation
-
 #  import necessary packages
 import pandas as pd
 import sys
@@ -85,6 +84,33 @@ def read_table(dbname, tablename):
     df = pd.read_sql_table(tablename, con=engine)
     return df
 
+def main():
+    
+    if len(sys.argv) == 4:
+
+        messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
+
+    
+        print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
+              .format(messages_filepath, categories_filepath))
+        df = read_data(msg_file=messages_filepath, cat_file=categories_filepath)
+
+        print('Cleaning data...')
+        df = process_data(df)
+        
+        print('Saving data...\n    DATABASE: {}'.format(database_filepath))
+        save_table(df, dbname=database_filepath)
+        
+        print('Cleaned data saved to database!')
+    
+    else:
+        print('Please provide the filepaths of the messages and categories '\
+              'datasets as the first and second argument respectively, as '\
+              'well as the filepath of the database to save the cleaned data '\
+              'to as the third argument. \n\nExample: python process_data.py '\
+              'disaster_messages.csv disaster_categories.csv '\
+              'DisasterResponse.db')
+
 
 if __name__ == '__main__':
     """
@@ -92,11 +118,5 @@ if __name__ == '__main__':
     """
     # Example Execution:
     # python process_data.py messages.csv categories.csv DisasterResponse.db
+    main()
 
-    msg_file_path = sys.argv[1]
-    cat_file_path = sys.argv[2]
-    database_path = sys.argv[3]
-
-    df = read_data(msg_file=msg_file_path, cat_file=cat_file_path)
-    df = process_data(df)
-    save_table(df, dbname=database_path)
