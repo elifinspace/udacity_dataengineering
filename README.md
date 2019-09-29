@@ -13,6 +13,14 @@ Udacity Data Scientist Nanodegree Data Engineering Portfolio
 
 
 ### Instructions:
+First clone this repository :
+
+```
+git clone https://github.com/elifinspace/udacity_dataengineering.git
+cd udacity_dataengineering/
+```
+
+
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
