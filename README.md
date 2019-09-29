@@ -17,11 +17,14 @@ Udacity Data Scientist Nanodegree Data Engineering Portfolio
 
     - To run ETL pipeline that cleans data and stores in database
     
+    Command:
+    
         `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
         
-        
-      ```
-      Sample Output: 
+    Sample Output:     
+     
+       ```
+       
         Loading data...
             MESSAGES: data/disaster_messages.csv
             CATEGORIES: data/disaster_categories.csv
@@ -34,15 +37,18 @@ Udacity Data Scientist Nanodegree Data Engineering Portfolio
             DATABASE: data/DisasterResponse.db
         messages Table is saved to : data/DisasterResponse.db
         Cleaned data saved to database!
-      ```
+        ```
         
     - To run ML pipeline that trains classifier and saves
-    
+     
+     Command:
+      
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
         
-        
+     Sample Output: 
+     
       ```
-       Sample Output: 
+       
         Loading data...
         DATABASE: data/DisasterResponse.db
         Building model...
