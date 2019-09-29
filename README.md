@@ -29,7 +29,9 @@ Udacity Data Scientist Nanodegree Data Engineering Portfolio
 
 ### Web App :
 
-![Alt text](https://github.com/elifinspace/udacity_dataengineering/blob/master/data/newplot.png?raw=true)
+![Alt text](https://github.com/elifinspace/udacity_dataengineering/blob/master/data/genres_hist.png?raw=true)
+
+![Alt text](https://github.com/elifinspace/udacity_dataengineering/blob/master/data/categories_hist.png?raw=true)
 
 
 ### Author:
